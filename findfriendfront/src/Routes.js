@@ -12,10 +12,13 @@ import Main from "./Components/Main";
 import Join from './Components/Join';
 import Login from './Components/Login';
 import {Container} from '@material-ui/core';
+import Header from "./Components/Header";
 
 class Routes extends React.Component {
   render() {
     return (
+      <>
+      <Header/>
       <Container maxWidth="sm">
       <Router>
         <Switch>
@@ -27,6 +30,7 @@ class Routes extends React.Component {
         </Switch>
       </Router>
       </Container>
+      </>
     )
   }
 }

@@ -1,18 +1,20 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import {Button,Link,Box} from '@material-ui/core';
+import FilterOutlinedIcon from '@material-ui/icons/FilterOutlined';
 
 const Main = () => {
     return (
         <>
-        <div>
-            <span>Main Page</span>
-        </div>
-        <div>
+    <Box color="white" p={1} style={{textAlign:'center'}}>
+    <FilterOutlinedIcon color="action" style={{ fontSize: 200 ,marginTop:50}}/>
+    </Box>
+        <div style={{textAlign:'center',marginTop:50}}>
             <Route>
-                <Link to="/wait">
-                    <button>
+                <Link href="/wait">
+                    <Button variant="contained" color="primary">
                         매칭
-                    </button>
+                    </Button>
                 </Link>
             </Route>
         </div>

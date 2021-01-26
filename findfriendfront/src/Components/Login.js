@@ -1,20 +1,26 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import {Button,Link,TextField,Grid } from '@material-ui/core';
 
 const Login = () => {
     return (
-    <div class="p-4 m-4 bg-green-600">
-        <Link to="/main">
-            <button>
+    <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="stretch"
+      >
+        <TextField id="standard-basic" label="닉네임" />
+        <Link href="/main">
+            <Button variant="outlined">
                 확인
-            </button>
+            </Button>
         </Link>
-        <Link to="/join">
-            <button>
-                Join
-            </button>
+        <Link href="/join">
+            <Button  variant="contained" color="primary">
+                회원 가입
+            </Button>
         </Link>
-    </div>
+    </Grid>
      );
  }
  
