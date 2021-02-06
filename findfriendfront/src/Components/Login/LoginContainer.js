@@ -1,13 +1,28 @@
 import React, { useState } from "react";
 import LoginPresenter from "./LoginPresenter";
-import {Login} from "../api";
+import useInput from "../../Hooks/useInput";
 
-export default () => {
-    const [user, setuser] = useState(Login('tw@naver.co','123'));
-    console.log(user);
+const LoginContainer =()=> {
+    const [state,onChange]= useInput({
+        email:'',
+        password:''
+    });
+
+    const {email,password} =state;
+
+    const onSubmit = async (e)=>{
+        e.preventDefault();
+        console.log(e);
+    };
+
     return (
         <LoginPresenter
-
+            onSubmit={onSubmit}
+            email={email}
+            password={password}
+            onChange={onChange}
         />
     );
 };
+
+export default LoginContainer; 

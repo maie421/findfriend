@@ -1,7 +1,5 @@
 import axios from "axios";
 
-export const mainpath ='';
-
 axios.defaults.baseURL = "http://127.0.0.1:8000/api";
 // axios.defaults.withCredentials = true;
   // axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
@@ -18,8 +16,7 @@ export const Login = (email, password) => {
 		axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 
 		// accessToken을 localStorage, cookie 등에 저장하지 않는다!
-		
-		return "d";
+
 	}).catch(error => {
 		// ... 에러 처리
 		return error;
