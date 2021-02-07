@@ -38,9 +38,13 @@ const LoginContainer =()=> {
 
     const onSubmit = async (e)=>{
         e.preventDefault();
-        const result=await Login(email,password);
-        if(result==='success'){
-            console.log(localStorage.getItem("token"));
+        
+        await Login(email,password);
+        if(localStorage.getItem("token")==null){
+            window.alert("비밀번호 나 이메일이 틀렸습니다.");
+        }else{
+            window.location.replace("/");
+            localStorage.setItem("token",localStorage.getItem("token"));
         }
     };
 
