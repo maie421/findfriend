@@ -1,9 +1,11 @@
 import React  from 'react';
 import { ChatFeed, Message } from 'react-chat-ui';
-import { Input  } from 'react-chat-elements';
-import {Button,Link,TextField,Grid } from '@material-ui/core';
+import socketio from 'socket.io-client';
+import {Button,TextField } from '@material-ui/core';
+
 class AcceptMatching extends React.Component {
     render() {
+      const socket = socketio.connect('http://localhost:3000');
         this.state = {
             messages: [
               new Message({
